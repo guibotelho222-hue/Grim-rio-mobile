@@ -1,0 +1,17 @@
+[project]
+name = "grimorio"
+version = "2.0.0"
+description = "Grimorio App v2.0"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "flet>=0.21.0",
+]
+
+[tool.flet]
+org = "com.grimorio"
+product = "Grimorio"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
