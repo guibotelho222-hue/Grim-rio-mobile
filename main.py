@@ -1,4 +1,4 @@
-name: Build Flet APK Definitivo
+name: Build Flet APK
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up Python 3.10
+    - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
@@ -27,9 +27,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install --upgrade flet
+        pip install flet
 
-    - name: Build Android APK
+    - name: Build APK
       run: |
         flet build apk --yes
 
