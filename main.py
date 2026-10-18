@@ -1,4 +1,4 @@
-name: Build Flet APK
+name: Build Flet APK Definitivo
 
 on:
   push:
@@ -13,12 +13,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up Python
+    - name: Set up Python 3.10
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
-    - name: Set up Java (Android requirement)
+    - name: Set up Java 17
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
@@ -27,9 +27,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flet
+        pip install --upgrade flet
 
-    - name: Build APK with Flet
+    - name: Build Android APK
       run: |
         flet build apk --yes
 
